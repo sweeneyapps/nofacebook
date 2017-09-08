@@ -26,15 +26,11 @@ var app = {
   // setup Chrome Events
   setupEvents: () => {   
     chrome.tabs.onCreated.addListener( (id, changeInfo, tab) => {
-      if (reFacebook.test(tab.url)) {
-        app.blockFacebook(tab.id);      
-      }
+        app.blockFacebook(tab);      
     });
 
     chrome.tabs.onUpdated.addListener( (id, changeInfo, tab) => {
-      if (reFacebook.test(tab.url)) {
         app.blockFacebook(tab);     
-      } 
     });
 
     chrome.idle.setDetectionInterval(60*10);
