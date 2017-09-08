@@ -24,7 +24,7 @@
 ## Instruction on updating if you cloned this repo
 
 ### Cloning this repo
-- git clone git@github.com:sweeneyapps/nofacebook.git
+- git clone https://github.com/sweeneyapps/nofacebook.git
 
 ### Updating
 - go to the current directory of nofacebook
