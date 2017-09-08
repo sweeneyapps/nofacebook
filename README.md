@@ -24,10 +24,10 @@
 ## Instruction on updating if you cloned this repo
 
 ### Cloning this repo
-- git clone git@github.com:sweeneyapps/NoFacebook.git
+- git clone git@github.com:sweeneyapps/nofacebook.git
 
 ### Updating
-- go to the current directory of NoFacebook
+- go to the current directory of nofacebook
 - git pull
 - Go to chrome://extensions/
 - Look for No Facebook and hit the Reload link
