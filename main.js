@@ -20,6 +20,7 @@ var app = {
   setup: () => {
     app.setupEvents(); 
     app.toggleBadge(true);
+    app.updateTabs();
   },
 
   // setup Chrome Events
@@ -46,10 +47,14 @@ var app = {
     chrome.browserAction.onClicked.addListener( () => {
       app.active = !app.active;
       app.toggleBadge(app.active);
-      chrome.tabs.query({url:"*://*.facebook.com/*"}, (tabs) => {
-        tabs.forEach(tab => {
-          app.blockFacebook(tab);
-        });
+      app.updateTabs();
+    });
+  },
+
+  updateTabs: () => {
+    chrome.tabs.query({url:"*://*.facebook.com/*"}, (tabs) => {
+      tabs.forEach(tab => {
+        app.blockFacebook(tab);
       });
     });
   },
