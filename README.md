@@ -1,5 +1,5 @@
 # No Facebook
-- A helpful tool to avoid facebook.
+- A helpful tool to avoid facebook distraction.
 
 ---------------------
 ## Instruction on how to install this plugins
@@ -14,9 +14,9 @@
 
 ## How to use?
 
-- Smiley icon will be loaded w/ "OFF" text
-- You just click on Smiley Icon to turn it "ON"
-- Then you are all set.  No more Facebook for you! 
+- Smiley icon will be loaded w/ "ON" text
+- You just click on Smiley Icon to turn it "OFF"
+- Then you are all set.  No more Facebook distraction for you! 
 - If you want to return to Facebook, just click the Smiley Icon to turn it "OFF"
 - Good luck! 
 
