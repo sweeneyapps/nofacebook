@@ -34,6 +34,7 @@ var app = {
     chrome.idle.onStateChanged.addListener(state => { 
       if (state !== "active") {
         app.toggleBadge(true);
+        app.updateTabs();
       }
     });
 
