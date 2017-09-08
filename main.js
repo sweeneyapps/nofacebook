@@ -26,7 +26,7 @@ var app = {
   // setup Chrome Events
   setupEvents: () => {   
     chrome.tabs.onCreated.addListener( (id, changeInfo, tab) => {
-        app.blockFacebook(tab);      
+        // app.blockFacebook(tab);      
     });
 
     chrome.tabs.onUpdated.addListener( (id, changeInfo, tab) => {
