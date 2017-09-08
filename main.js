@@ -8,7 +8,7 @@ var c = {
 
 var app = {
   active: true,
-  quoteCount: 0,
+  quoteShown: [],
 
   toggleBadge: (on) => {
     var text  = on ? "ON" : "OFF";
@@ -33,7 +33,8 @@ var app = {
     chrome.idle.setDetectionInterval(60*10);
     chrome.idle.onStateChanged.addListener(state => { 
       if (state !== "active") {
-        app.toggleBadge(true);
+        app.active = true;
+        app.toggleBadge(app.active);
         app.updateTabs();
       }
     });
@@ -60,10 +61,11 @@ var app = {
     if (reFacebook.test(tab.url)) {
       var quote, name;
       if(app.active) {
-       var index = app.quoteCount % quoteSource.length;
+       if (quoteSource.length === 0) quoteSource = quoteSource.concat(app.quoteShown); 
+       var index = Math.floor(Math.random() * quoteSource.length);
        name = quoteSource[index].name;
        quote = quoteSource[index].quote;
-       app.quoteCount += 1;
+       app.quoteShown.push(quoteSource.splice(index,1)[0]);
       }
 
       var code = app.active ? 
@@ -75,13 +77,10 @@ var app = {
         style.innerHTML = 'div[role="feed"] { display:none; } .nofacebookquotes { padding:20px; font-size:20px; }';
         document.querySelector('body').appendChild(style);
         var quote = document.createElement("div");
-        var name = document.createElement("div");
         quote.className = "nofacebookquotes";
-        
         quote.innerHTML = "${quote}<p style='margin-left:10px;'>-${name}</p>";
         var contentArea = document.querySelector("#contentArea");
         contentArea.appendChild(quote);
-
       }
       `
       :
@@ -406,5 +405,3 @@ var quoteSource = [
 {
        "quote":"If you can dream it, you can achieve it.","name":"Zig Ziglar"},
 ];
-
-
