@@ -1,0 +1,24 @@
+{
+   "manifest_version": 2,
+   
+   "background": {
+      "persistent": true,
+      "scripts": [ "main.js" ]
+   },
+ 
+   "browser_action": {
+      "default_icon": "myicons.png"
+   }, 
+   
+   "permissions": [
+     "idle", 
+     "tabs", 
+     "activeTab",
+     "*://*.facebook.com/*"
+     ],
+
+   "name": "No Facebook",
+   "version": "0.1",
+   "description": "block facebook newsfeed to avoid distraction",
+   "homepage_url": "https://github.com/sweeneyapps/nofacebook"
+}
