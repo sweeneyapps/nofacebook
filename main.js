@@ -1,26 +1,16 @@
 // app name: No Facebook
 // author name: Paul Sweeney Jr.
 
-var c = {
-  BLACK: [0,0,0,255],
-  GREEN: [34,139,3,255]
-};
-
 var app = {
   active: true,
-  quoteShown: [],
 
-  toggleBadge: (on) => {
-    var text  = on ? "ON" : "OFF";
-    var color = on ? c.GREEN : c.BLACK;
- 
-    chrome.browserAction.setBadgeBackgroundColor({color: color});
-    chrome.browserAction.setBadgeText({text: text});  
+  setActive: (onActive) => {
+    app.active = onActive;
+    app.updateTabs();
   },
 
   setup: () => {
     app.setupEvents(); 
-    app.toggleBadge(true);
     app.updateTabs();
   },
 
@@ -34,15 +24,8 @@ var app = {
     chrome.idle.onStateChanged.addListener(state => { 
       if (state !== "active") {
         app.active = true;
-        app.toggleBadge(app.active);
         app.updateTabs();
       }
-    });
-
-    chrome.browserAction.onClicked.addListener( () => {
-      app.active = !app.active;
-      app.toggleBadge(app.active);
-      app.updateTabs();
     });
   },
 
@@ -58,7 +41,8 @@ var app = {
     const reFacebook = /facebook\.com/; 
     var tabID = tab.id;
 
-    if (reFacebook.test(tab.url)) {   
+    if (reFacebook.test(tab.url)) { 
+      chrome.pageAction.show(tab.id);  
       var code = app.active ? 
       `
       var check = document.querySelector("#nofacebookfeed");
@@ -99,3 +83,4 @@ var app = {
 
 app.setup();  // launch point for Chrome Extension to load.
  
+

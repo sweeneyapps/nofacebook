@@ -6,8 +6,11 @@
       "scripts": [ "main.js" ]
    },
  
-   "browser_action": {
-      "default_icon": "myicons.png"
+   "page_action": {
+      "default_icon": { 
+        "32": "myicons.png" 
+      },
+      "default_popup": "popup.html"
    }, 
    
    "permissions": [

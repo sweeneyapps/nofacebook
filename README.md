@@ -14,12 +14,18 @@
 
 ## How to use?
 
-- Smiley icon will be loaded w/ "ON" text
-- You just click on Smiley Icon to turn it "OFF"
+- There will be a Smiley icon and you just click on it when you are on facebook.
+- You'll see popup with button to click on.
+- Whenever it's on, it will remove the newsfeed and display some quotes.
 - Then you are all set.  No more Facebook distraction for you! 
-- If you want to return to Facebook, just click the Smiley Icon to turn it "OFF"
+- If you want to return to Facebook, just go to facebook then click on the Smiley icon to turn it "OFF"
+- Also there idling timer, it will turn back ON itself in 10 minutes when you are away from the computer.
 - Good luck! 
 
+## Suggestions?
+
+ - just open a new issue if you have any suggestions. 
+ - https://github.com/sweeneyapps/nofacebook/issues
 
 ## Instruction on updating if you cloned this repo
 
