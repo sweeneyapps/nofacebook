@@ -11,6 +11,10 @@
 - find the directory with this code that you downloaded.
 - select the directory then click OK
 
+### Demo Video
+
+https://www.youtube.com/watch?v=ksXNt_qju0M
+
 
 ## How to use?
 
@@ -37,11 +41,6 @@
 - git pull
 - Go to chrome://extensions/
 - Look for No Facebook and hit the Reload link
-
-### Demo Video
-
-https://www.youtube.com/watch?v=ksXNt_qju0M
-
 
 ---------------------
 
