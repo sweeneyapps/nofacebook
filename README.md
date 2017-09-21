@@ -38,6 +38,10 @@
 - Go to chrome://extensions/
 - Look for No Facebook and hit the Reload link
 
+### Demo Video
+
+https://www.youtube.com/watch?v=ksXNt_qju0M
+
 
 ---------------------
 
